@@ -7,6 +7,7 @@ ruby '2.6.6'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'kaminari'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
