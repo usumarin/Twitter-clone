@@ -2,7 +2,7 @@
 .main-container {
   // height: 0;
   // padding-top: 56.25%;
-  background-image: image-url('background.jpg');
+  background-image: image-url("background.jpg");
   background-size: cover;
   width: 100%;
   padding-top: 100%;
@@ -11,7 +11,7 @@
   left: 0;
 }
 .main-container .description {
-  background: raba(0,0,0,0.5);
+  background: raba(0, 0, 0, 0.5);
   position: absolute;
   top: 30%;
   width: 100%;
@@ -20,4 +20,17 @@
   color: #000;
   text-align: center;
   font-weight: bold;
+}
+
+.tweet-form {
+  margin: 30px 60px;
+  outline: solid 1px;
+  padding: 5%;
+}
+.form-group .btn .btn-primary {
+  margin: 10px;
+}
+
+h1.new-tweet-h1 {
+  margin: 30px 60px;
 }

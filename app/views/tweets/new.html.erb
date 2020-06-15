@@ -1,4 +1,4 @@
-<%= form_with model: @tweet do |form| %>
-  <%= form.text_field :content %>
-  <%= form.submit %>
-<% end %>
+<div class="container col-md-8">
+  <h1 class="new-tweet-h1">Tweetを投稿する</h1>
+  <%= render 'tweet', tweet: @tweet %>
+</div>

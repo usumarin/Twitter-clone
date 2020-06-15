@@ -1,0 +1,7 @@
+<%= form_with(model: @tweet,class: "tweet-form") do |form| %>
+    <div class="form-group">
+      <label for="tweetInput">投稿するTweetの内容</label>
+      <%= form.text_field :content , class: 'form-control', type: 'text'%>
+      <%= form.submit 'Tweetを投稿する', class: 'btn btn-primary btn-lg mt-4' %>
+    </div>
+<% end %>
