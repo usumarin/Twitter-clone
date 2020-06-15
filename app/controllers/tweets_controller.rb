@@ -12,9 +12,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     if @tweet.save
       flash[:success] = "成功"
+      redirect_to tweets_path
     else
       flash[:danger] = "失敗"
-      render "root_path"
+      render "new"
     end
   end
 
