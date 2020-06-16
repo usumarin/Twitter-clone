@@ -1,4 +1,5 @@
 <div class="container col-md-8">
   <h1 class="new-tweet-h1">Tweetを投稿する</h1>
+  <%= render 'layouts/error_messages', object: @tweet %>
   <%= render 'tweet', tweet: @tweet %>
 </div>

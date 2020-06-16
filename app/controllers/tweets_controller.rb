@@ -14,7 +14,6 @@ class TweetsController < ApplicationController
       flash[:success] = "成功"
       redirect_to tweets_path
     else
-      flash[:danger] = "失敗"
       render "new"
     end
   end
