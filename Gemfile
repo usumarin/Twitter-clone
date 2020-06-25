@@ -12,6 +12,7 @@ gem 'rails-i18n'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'rack', '>= 2.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
