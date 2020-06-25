@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/tweets', to: 'tweets#index'
   get '/new', to: 'tweets#new'
   post '/tweets', to: 'tweets#create'
+  resources :relationships, only: [:create, :destroy]
 end
