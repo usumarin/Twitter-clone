@@ -1,7 +1,9 @@
 class TweetsController < ApplicationController
+before_action :authenticate_user!, expect: :index
 
   def index
     @tweets = Tweet.all.order(id: :DESC)
+    @user = User.find_by(id: @tweets.user_id)
   end
 
   def new
