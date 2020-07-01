@@ -6,11 +6,10 @@
           <div class="card" style="width: 70rem;">
             <div class="card-body">
               <%= tweet.content %>
-              <%= user.id %>
+              <%= link_to tweet.user.name, user_path(tweet.user.id) %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-  </div>
 </div>
