@@ -5,6 +5,14 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <label for="inputFile">プロフィール画像</label>
+    <div class="custom-file">
+      <%= f.label :avatar, class: 'custom-file-label' %><br />
+      <%= f.file_field :avatar, class: 'custom-file-input' %>
+    </div>
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, class: 'form-control' %>
   </div>

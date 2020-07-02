@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :User
   has_many :tweets, dependent: :destroy
   attr_accessor :current_password
+  has_one_attached :avatar
 
   def follow(other_user)
     unless self == other_user
@@ -27,4 +28,16 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+
+  def thumbnail
+    return self.avatar.variant(resize: '300x300').processed
+  end
+
+  private
+
+    def avatar_type
+      if !avatar.content_type.in?(%('avatar/jpeg avatar/png'))
+        errors.add(:avatars, 'アップロードできるのはJPEGまたはPNGだけです')
+      end
+    end
 end
