@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-before_action :authenticate_user!, expect: :index
+before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @tweets = Tweet.all.order(id: :DESC)
