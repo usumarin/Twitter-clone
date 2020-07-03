@@ -11,12 +11,15 @@
               <%= link_to "Home",root_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "つぶやく", new_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
               <%= link_to "つぶやきをみる", tweets_path, class: "nav-link" %>
             </li>
           <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "つぶやく", new_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "プロフィール",user_path(current_user), class: "nav-link" %>
+            </li>
             <li class="nav-item">
               <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link" %>
             </li>
