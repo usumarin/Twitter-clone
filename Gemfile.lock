@@ -89,7 +89,7 @@ GEM
     devise-i18n (1.9.1)
       devise (>= 4.7.1)
     devise-i18n-views (0.3.7)
-    diff-lcs (1.4.3)
+    diff-lcs (1.4.4)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
