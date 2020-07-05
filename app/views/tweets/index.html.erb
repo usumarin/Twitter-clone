@@ -13,7 +13,7 @@
             <div class="card-body">
               <p class="card-text"><%= tweet.content %></p>
               <div id="tweet_time">
-                <%= tweet.created_at %>
+                <%= simple_time(tweet.created_at) %>
               </div>
             </div>
           </div>
