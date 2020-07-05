@@ -1,17 +1,12 @@
 @import "bootstrap";
 .main-container {
-  // height: 0;
-  // padding-top: 56.25%;
-  background-image: image-url("background.jpg");
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
   padding-top: 100%;
   position: relative;
-  top: 0;
-  left: 0;
 }
 .main-container .description {
-  background: raba(0, 0, 0, 0.5);
   position: absolute;
   top: 30%;
   width: 100%;
