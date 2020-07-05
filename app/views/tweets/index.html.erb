@@ -1,15 +1,17 @@
-<div class="container">
-  <h1>ツイート一覧</h1>
+<div class="container-fluid">
+  <h1 class="text-center">ツイート一覧</h1>
     <div class="d-flex flex-column">
       <% @tweets.each do |tweet| %>
-        <div class="tweet-index">
-          <div class="card" style="width: 70rem;">
-            <div class="card-body">
-              <%= tweet.content %>
-              <%= link_to tweet.user.name, user_path(tweet.user.id) %>
+        <div class="tweet-index mx-auto">
+          <div class="card border-secondary mb-3" style="width: 30rem;">
+            <div class="card-header">
               <% if tweet.user.avatar.attached? %>
                 <%= image_tag tweet.user.user_icon %>
               <% end %>
+              <%= link_to tweet.user.name, user_path(tweet.user.id), class: "card-link"%>
+            </div>
+            <div class="card-body">
+              <p class="card-text"><%= tweet.content %></p>
               <div id="tweet_time">
                 <%= tweet.created_at %>
               </div>
