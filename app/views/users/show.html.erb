@@ -1,9 +1,14 @@
-<h1>Users#show</h1>
-<% if @user.avatar.attached? %>
-  <%= image_tag @user.thumbnail %>
-<% end %>
-<p>ユーザーネーム : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール:<%= @user.profile %><p>
-<%= render 'follow_form' %>
-<%= render 'stats' %>
+<div class="container-fluid">
+  <h1 class="text-center">ユーザープロフィール</h1>
+  <div class="col-md-4 offset-md-4 pt-4">
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.thumbnail,class: "d-block mx-auto" %>
+    <% end %>
+    <p class="text-center"><strong>ユーザーネーム</strong> : <%= @user.name %></p>
+    <p class="text-center"><strong>プロフィール</strong> : <%= @user.profile %><p>
+    <div class="follow-stats text-center">
+      <%= render 'follow_form' %>
+      <%= render 'stats' %>
+    </div>
+  </div>
+</div>
