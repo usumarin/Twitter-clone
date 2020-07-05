@@ -26,6 +26,10 @@ class User < ApplicationRecord
     following_relationships.find_by(following_id: other_user.id).destroy
   end
 
+  def user_icon
+    return self.avatar.variant(resize: '80x80').processed
+  end
+  
   def thumbnail
     return self.avatar.variant(resize: '300x300').processed
   end

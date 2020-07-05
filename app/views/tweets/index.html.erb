@@ -7,6 +7,9 @@
             <div class="card-body">
               <%= tweet.content %>
               <%= link_to tweet.user.name, user_path(tweet.user.id) %>
+              <% if tweet.user.avatar.attached? %>
+                <%= image_tag tweet.user.user_icon %>
+              <% end %>
             </div>
           </div>
         </div>
