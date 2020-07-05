@@ -10,6 +10,9 @@
               <% if tweet.user.avatar.attached? %>
                 <%= image_tag tweet.user.user_icon %>
               <% end %>
+              <div id="tweet_time">
+                <%= tweet.created_at %>
+              </div>
             </div>
           </div>
         </div>
