@@ -1,10 +1,19 @@
-<h1>All users</h1>
+<div class="container-fluid">
+<h1 class="text-center">すべてのユーザー</h1>
 
-<ul class="users">
+  <div class="col-md-6 offset-md-3">
   <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user %>
-    </li>
+    <div class="card mx-auto text-center mt-2 border border-dark" style="width: 18rem;">
+      <% if user.avatar.attached? %>
+        <%= image_tag user.thumbnail, class: 'mx-auto card-img-top' %>
+      <% end %>
+      <div class="card-body">
+        <%= link_to  user.name, user, class: 'card-link text-center' %>
+        <div class="text-center mt-2">プロフィール</div>
+        <div><%= user.profile %></div>
+      </div>
+    </div>
   <% end %>
-  <%= paginate @users %>
-</ul>
+  </div>
+</div>
+<%= paginate @users %>
