@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @tweets = @user.tweets.page(params[:page]).per(5).order("created_at DESC")
   end
 
   def following
