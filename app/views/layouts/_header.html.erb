@@ -8,30 +8,54 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to "Home",root_path, class: "nav-link" %>
+            <%= link_to root_path, class: "nav-link" do %>
+            <%= icon("fas","home") %>
+            Home
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "つぶやきをみる", tweets_path, class: "nav-link" %>
+            <%= link_to tweets_path, class: "nav-link" do %>
+            <%= icon("fas","comments") %>
+            つぶやきをみる
+            <% end %>
           </li>
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "つぶやく", new_path, class: "nav-link" %>
+          <li class="nav-item new_tweet">
+            <%= link_to new_path, class: "nav-link" do %>
+            <%= icon("fas","comment") %>
+            つぶやく
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "プロフィール",user_path(current_user), class: "nav-link" %>
+            <%= link_to user_path(current_user), class: "nav-link" do %>
+            <%= icon("fas","user") %>
+            プロフィール
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to 'プロフィール変更', edit_user_registration_path, class: "nav-link" %>
+            <%= link_to edit_user_registration_path, class: "nav-link" do %>
+            <%= icon("fas","user-edit") %>
+            プロフィール変更
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+            <%= icon("fas","sign-out-alt") %>
+            ログアウト
+            <% end %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to 'サインアップ', new_user_registration_path, class: "nav-link" %>
+            <%= link_to new_user_registration_path, class: "nav-link" do %>
+            <%= icon("fas","user-plus") %>
+            サインアップ
+            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+            <%= icon("fas","sign-in-alt") %>
+            ログイン
+            <% end %>
           </li>
         <% end %>
         </ul>
