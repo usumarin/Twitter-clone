@@ -16,7 +16,10 @@ before_action :authenticate_user!, only: [:new, :create]
       flash[:success] = "戝功"
       redirect_to tweets_path
     else
-      render "new"
+      @user = current_user
+      @tweets = current_user.tweets
+      @tweets = current_user.tweets.page(params[:page]).per(10)
+      render template: "users/show"
     end
   end
 
