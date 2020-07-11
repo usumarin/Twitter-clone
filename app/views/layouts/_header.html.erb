@@ -20,12 +20,6 @@
             <% end %>
           </li>
         <% if user_signed_in? %>
-          <li class="nav-item new_tweet">
-            <%= link_to new_path, class: "nav-link" do %>
-            <%= icon("fas","comment") %>
-            つぶやく
-            <% end %>
-          </li>
           <li class="nav-item">
             <%= link_to user_path(current_user), class: "nav-link" do %>
             <%= icon("fas","user") %>
