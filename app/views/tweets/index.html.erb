@@ -1,4 +1,6 @@
 <div class="container-fluid">
+  <%= render "users/user_profile.html.erb" %>
+  <div class="col-md-8">
   <h1 class="text-center">ツイート一覧</h1>
     <div class="d-flex flex-column">
       <% @tweets.each do |tweet| %>
@@ -21,4 +23,5 @@
       <% end %>
       <%= paginate @tweets %>
     </div>
+  </div>
 </div>
