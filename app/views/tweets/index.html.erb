@@ -11,6 +11,8 @@
             <div class="card-header">
               <% if tweet.user.avatar.attached? %>
                 <%= image_tag tweet.user.user_icon %>
+              <% else %>
+                <%= image_tag 'no-image-user_icon.jpg' %>
               <% end %>
               <%= link_to tweet.user.name, user_path(tweet.user.id), class: "card-link"%>
             </div>

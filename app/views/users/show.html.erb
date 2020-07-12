@@ -5,6 +5,8 @@
   <h1 class="text-center">ユーザープロフィール</h1>
     <% if @user.avatar.attached? %>
       <%= image_tag @user.thumbnail,class: "d-block mx-auto" %>
+    <% else %>
+      <%= image_tag 'no-image-thumbnail.jpg', class: "d-block mx-auto" %>
     <% end %>
     <p class="text-center"><strong>ユーザーネーム</strong> : <%= @user.name %></p>
     <p class="text-center"><strong>プロフィール</strong> : <%= @user.profile %><p>
@@ -19,6 +21,8 @@
             <div class="card-header">
               <% if tweet.user.avatar.attached? %>
                 <%= image_tag tweet.user.user_icon %>
+              <% else %>
+                <%= image_tag 'no-image-user_icon.jpg' %>
               <% end %>
               <%= link_to tweet.user.name, user_path(tweet.user.id), class: "card-link"%>
             </div>
