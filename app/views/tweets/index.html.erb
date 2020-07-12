@@ -1,6 +1,8 @@
 <div class="container-fluid">
-  <%= render "users/user_profile.html.erb" %>
-  <div class="col-md-8">
+  <% if user_signed_in? %>
+    <%= render "users/user_profile.html.erb" %>
+      <div class="col-md-8">
+  <% end %>
   <h1 class="text-center">ツイート一覧</h1>
     <div class="d-flex flex-column">
       <% @tweets.each do |tweet| %>
