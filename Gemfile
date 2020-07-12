@@ -15,8 +15,9 @@ gem 'devise-i18n-views'
 gem 'rack', '>= 2.2.3'
 gem 'mini_magick'
 gem 'font-awesome-sass', '~> 5.13.0'
+gem 'faker'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -51,7 +52,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'better_errors'
   gem 'pry-byebug'
-  gem 'faker'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -71,6 +72,10 @@ group :test do
   gem 'webdrivers'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
+end
+
+group :production do
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
