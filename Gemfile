@@ -16,6 +16,7 @@ gem 'rack', '>= 2.2.3'
 gem 'mini_magick'
 gem 'font-awesome-sass', '~> 5.13.0'
 gem 'faker'
+gem 'aws-sdk-s3', require: false
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use Puma as the app server
