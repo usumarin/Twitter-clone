@@ -24,6 +24,15 @@ before_action :authenticate_user!, only: [:new, :create]
     end
   end
 
+  def destroy
+    tweet = Tweet.find(params[:id])
+    if tweet.user_id == current_user.id
+      tweet.destroy
+      flash[:notice] = 'ツイートが削除されました'
+      redirect_to user_path(id: current_user.id)
+    end
+  end
+
   private
 
     def tweet_params

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
   get '/tweets', to: 'tweets#index'
   post '/tweets', to: 'tweets#create'
-  # get 'users/show', to: 'users#show'
-  resources :users, only: [:index, :show]
+  delete 'tweets/:id', to: 'tweets#destroy'
+  resources :users, only: [:index, :show, :destroy]
   resources :users do
     member do
       get :following, :followers

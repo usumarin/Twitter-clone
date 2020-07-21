@@ -33,6 +33,9 @@
             </div>
             <div class="card-body">
               <p class="card-text"><%= tweet.content %></p>
+              <div id="tweet-destroy">
+                <%= link_to '削除',"/tweets/#{tweet.id}", method: :delete %>
+              </div>
               <div id="tweet_time">
                 <%= simple_time(tweet.created_at) %>
               </div>
