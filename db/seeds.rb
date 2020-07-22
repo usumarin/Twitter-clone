@@ -11,6 +11,12 @@ User.create(name: 'first',
             profile: 'first')
 user = User.find(1)
 user.avatar.attach(io: File.open('app/assets/images/first.jpg'),filename: 'user-image.jpg')
+User.create(name: 'ゲストユーザー',
+            email: 'guest@example.com',
+            password: 'password',
+            profile: 'ゲストユーザーです')
+user = User.find_by(email: 'guest@example.com')
+user.avatar.attach(io: File.open('app/assets/images/test-user.jpg'),filename: 'user-image.jpg')
 50.times do |n|
   user = User.create!(name: Faker::Name.name,
               email: Faker::Internet.email,

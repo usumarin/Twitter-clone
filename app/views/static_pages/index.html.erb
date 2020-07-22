@@ -5,6 +5,7 @@
     <p>勉強用に作成したTwitterのクローンサイトです</p>
       <div class="col-md-3 mx-auto">
         <%= link_to 'サインアップ', new_user_registration_path, class: "btn btn-info btn-block btn-lg" %>
+        <%= link_to 'ゲストユーザーとしてログイン', users_guest_sign_in_path, method: :post , class: "btn btn-secondary btn-block btn-lg mt-5"%>
       </div>
     </div>
   </div>

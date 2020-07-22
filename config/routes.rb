@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_user_login'
+  end
   root to: 'static_pages#index'
   get '/tweets', to: 'tweets#index'
   post '/tweets', to: 'tweets#create'

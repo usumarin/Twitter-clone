@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+
+  def guest_user_login
+    guest_user = User.find_by(email: "guest@example.com")
+    sign_in guest_user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました'
+  end
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
