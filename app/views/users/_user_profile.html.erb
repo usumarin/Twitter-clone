@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <div class="row">
   <div class="col-md-2">
-    <div class="card sticky-top mt-5" style="width: 20rem;">
+    <div class="card sticky-top mt-5 user-status p-2" style="width: 25rem;">
       <div class="card-title"><h3 class="ml-4"><%= link_to current_user.name, user_path(current_user) %> @<%= current_user.id %></h3>
         <div class="card-body">
           <div class="user-activity">
@@ -33,8 +33,6 @@
             </div>
           </div>
         </div>
-      </div>
-      </div>
       <% @tweet.errors.full_messages.each do |message| %>
       <div class="alert-danger">
         <%= message %>
@@ -44,8 +42,10 @@
       <div class="form-group">
         <label for="tweetInput">投稿するTweetの内容</label>
         <%= form.text_area :content , class: 'form-control', type: 'text'%>
-        <%= form.submit 'Tweetを投稿する', class: 'btn btn-primary' %>
+        <%= form.submit 'Tweetを投稿する', class: 'btn btn-primary mt-3' %>
       </div>
       <% end %>
     </div>
+  </div>
+  </div>
 <% end %>
