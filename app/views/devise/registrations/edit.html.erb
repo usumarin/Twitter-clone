@@ -1,63 +1,65 @@
 <div class="col-md-6 mx-auto my-3">
-<h2 class="col-md-5 pl-0 text-center">ユーザー情報を編集</h2>
+  <div class="user-edit-form p-3">
+    <h2 class="col-md-5 pl-0 text-center">ユーザー情報を編集</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <label for="inputFile">プロフィール画像</label>
-    <div class="custom-file">
-      <%= f.label :avatar, class: 'custom-file-label' %><br />
-      <%= f.file_field :avatar, class: 'custom-file-input' %>
+      <div class="field">
+        <label for="inputFile">プロフィール画像</label>
+        <div class="custom-file">
+          <%= f.label :avatar, class: 'custom-file-label' %><br />
+          <%= f.file_field :avatar, class: 'custom-file-input' %>
+        </div>
+      </div>
+
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :profile %><br />
+        <%= f.text_area :profile, autofocus: true, class: 'form-control' %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password %><br />
+        <%= f.password_field :current_password, autocomplete: "current-password",class:'form-control' %>
+      </div>
+
+      <div class="actions text-right mt-2">
+        <%= f.submit "ユーザー情報を更新する", class:'btn btn-outline-primary mt-3' %>
+      </div>
+    <% end %>
+
+    <div class="text-right mt-4">
+    <%= link_to "戻る", :back %>
     </div>
+
+    <h3 class="mt-3 text-center">アカウントを削除する</h3>
+
+    <div class="text-center">
+    <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-danger mt-2 mb-4' %>
   </div>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :profile %><br />
-    <%= f.text_area :profile, autofocus: true, class: 'form-control' %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %><br />
-    <%= f.password_field :current_password, autocomplete: "current-password",class:'form-control' %>
-  </div>
-
-  <div class="actions text-right mt-2">
-    <%= f.submit "ユーザー情報を更新する", class:'btn btn-outline-primary mt-3' %>
-  </div>
-<% end %>
-
-<div class="text-right mt-4">
-<%= link_to "戻る", :back %>
-</div>
-
-<h3 class="mt-3 text-center">アカウントを削除する</h3>
-
-<div class="text-center">
-<%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:'btn btn-danger mt-2 mb-4' %>
-</div>
 </div>
