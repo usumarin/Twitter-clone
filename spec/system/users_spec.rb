@@ -59,6 +59,24 @@ RSpec.describe 'Users', type: :system do
           click_button 'Sign up'
           expect(page).to have_content '確認用パスワードとパスワードの入力が一致しません'
         end
+        it 'パスワードが短すぎる' do
+          visit new_user_registration_path
+          fill_in 'user_email', with: 'text@example.com'
+          fill_in 'user_name', with: 'test-user'
+          fill_in 'user_password', with: 'a' * 4
+          fill_in 'user_password_confirmation', with: 'a' * 4
+          click_button 'Sign up'
+          expect(page).to have_content 'パスワードは6文字以上で入力してください'
+        end
+        it 'パスワードが長すぎる' do
+          visit new_user_registration_path
+          fill_in 'user_email', with: 'text@example.com'
+          fill_in 'user_name', with: 'test-user'
+          fill_in 'user_password', with: 'a' * 17
+          fill_in 'user_password_confirmation', with: 'a' * 17
+          click_button 'Sign up'
+          expect(page).to have_content 'パスワードは16文字以内で入力してください'
+        end
         it '登録済みメールアドレス' do
           visit new_user_registration_path
           fill_in 'user_email', with: 'factory@example.com'
