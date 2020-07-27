@@ -41,12 +41,7 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
       </div>
-
-      <div class="field">
-        <%= f.label :current_password %><br />
-        <%= f.password_field :current_password, autocomplete: "current-password",class:'form-control' %>
-      </div>
-
+      
       <div class="actions text-right mt-2">
         <%= f.submit "ユーザー情報を更新する", class:'btn btn-outline-primary mt-3' %>
       </div>
