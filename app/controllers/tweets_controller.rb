@@ -11,6 +11,10 @@ before_action :authenticate_user!, only: [:new, :create]
     @tweet = Tweet.new
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
+
   def create
     @tweet = Tweet.new(content: tweet_params[:content], user_id: current_user.id)
     if @tweet.save

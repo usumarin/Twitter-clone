@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   get '/tweets', to: 'tweets#index'
   post '/tweets', to: 'tweets#create'
   delete 'tweets/:id', to: 'tweets#destroy'
-  resources :users, only: [:index, :show, :destroy]
-  resources :users do
+  resources :users, only: [:index, :show, :destroy] do
     member do
       get :following, :followers
     end
   end
+  resources :tweets, only: [:create, :new, :show, :destroy]
   resources :relationships, only: [:create, :destroy]
 end

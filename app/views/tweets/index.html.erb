@@ -19,6 +19,7 @@
                 <%= image_tag 'no-image-user_icon.jpg' %>
               <% end %>
               <%= link_to tweet.user.name, user_path(tweet.user.id), class: "card-link"%>
+              <%= link_to tweet.id, tweet_path(tweet.id), class: 'card-link' %>
             </div>
             <div class="card-body">
               <p class="card-text"><%= tweet.content %></p>
