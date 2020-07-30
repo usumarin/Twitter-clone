@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
   has_many :tweets, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_tweets, through: :likes, source: :tweet
   attr_accessor :current_password
   has_one_attached :avatar
 
@@ -46,6 +48,10 @@ class User < ApplicationRecord
     result = update_attributes(params, *options)
     clean_up_passwords
     result
+  end
+
+  def already_liked?(tweet)
+    self.likes.exists?(tweet_id: tweet.id)
   end
 
   private

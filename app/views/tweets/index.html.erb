@@ -26,6 +26,9 @@
               <div id="tweet_time">
                 <%= simple_time(tweet.created_at) %>
               </div>
+              <div id="like-count">
+                <%= tweet.liked_users.count %>いいね
+              </div>
             </div>
           </div>
         </div>

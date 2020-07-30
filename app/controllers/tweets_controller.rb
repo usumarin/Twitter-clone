@@ -13,6 +13,7 @@ before_action :authenticate_user!, only: [:new, :create]
 
   def show
     @tweet = Tweet.find(params[:id])
+    @like = Like.new
   end
 
   def create
