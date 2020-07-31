@@ -35,8 +35,8 @@
               <p class="card-text"><%= tweet.content %></p>
               <% if user_signed_in? %>
                 <% if current_user == tweet.user %>
-                <div id="tweet-destroy">
-                  <%= link_to '削除',"/tweets/#{tweet.id}", method: :delete %>
+                <div id="tweet-destroy", class='text-right'>
+                  <%= link_to '削除',"/tweets/#{tweet.id}", method: :delete, class: 'btn btn-danger' %>
                 </div>
                 <% end %>
               <% end %>
