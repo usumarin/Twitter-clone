@@ -1,24 +1,43 @@
-# README
+# 概要
+Twitter-cloneは勉強用に作成したプログラムです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 機能一覧
+- ユーザー管理機能
+  - 新規ユーザー登録
+  - ログイン(簡単ログイン機能含む)
+  - プロフィール編集
+  - プロフィール参照
+  - ユーザー一覧
+- ツイート機能
+ - 新規ツイート機能
+ - ツイート一覧
+ - ツイート詳細
+ - ツイート削除
+- いいね機能
+  - いいね登録・解除
+- フォロー機能
+  - フォロー登録・解除
+  - フォロー、フォロワー一覧
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 使用技術一覧
+- 言語
+  - Ruby(2.6.6)
+- フレームワーク
+  - Ruby on Rails(5.2.4)
+- データベース
+  - postgresql
+- フロントエンド
+  - Bootstrap 4
+  - Font Awesome
+- 開発環境
+  - Ubuntu 20.04
+  - WSL Ubuntu 18.04
+  - VSCode
+- 本番環境
+  - heroku
+- 使用した主なGem
+  - devise (ユーザー認証)
+  - aws-sdk-s3 (S3のストレージ使用)
+  - kaminari (ページネーション)
+  - RSpec (テスト)
+  - Active Storage (プロフィール画像アップロード)
